@@ -1,0 +1,478 @@
+// ============================================================
+//  DATOS DE MUCHOOCIO
+// ============================================================
+
+// ---------- SECCIONES ----------
+const SECCIONES = [
+  { id: "anime",    nombre: "Anime",     singular: "Anime"   , fondo: "anime.webp"},
+  { id: "serie",    nombre: "Series",    singular: "Serie"   , fondo: "series.webp"},
+  { id: "cartoon",  nombre: "Cartoons",  singular: "Cartoon" , fondo: "cartoons.webp"},
+  { id: "pelicula", nombre: "Películas", singular: "Película", fondo: "peliculas.webp"},
+];
+
+const FONDO_RANKING = "ranking.webp";
+
+// ---------- TÍTULOS ----------
+// Campos:
+//   titulo     → nombre del título
+//   tipo       → "id" de una sección
+//   nota       → número del 0 al 10 o null
+//   sinopsis   → texto entre comillas invertidas (` `)
+//   portada    → "archivo.webp"
+//   enSeccion  → true = aparece en sección.
+//   capitulos  → lista de { nombre, drive }
+
+const TITULOS = [
+
+// ==========================================================
+//  EN SECCIÓN
+// ==========================================================
+
+  // ---------- Anime ----------
+  {
+    titulo: "Bungou Stray Dogs",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `La historia comienza cuando Atsushi Nakajima, un joven expulsado de un orfanato, se une a la Agencia de Detectives Armados, un grupo que resuelve casos imposibles para la policía. Los detectives, como Dazai y Kunikida, usan habilidades únicas relacionadas con los nombres de escritores famosos para combatir el crimen.`,
+    portada: "bungo portada.webp",
+    fondo: "bungo fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 4",
+    capitulos: [
+        { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/1Bh3LvPGhbOQI3kea38HOmZXLLjwn9m_z/view?usp=sharing" },
+        { nombre: "Capítulo 4", drive: "https://drive.google.com/file/d/1jEJuU68RlA2Rip9X9r7F0yh1TkDrsB7n/view?usp=sharing" },
+        { nombre: "Capítulo 5", drive: "https://drive.google.com/file/d/1d31M-kDhU3BPg8LGhgsNxEKFGWINc0Sl/view?usp=sharing" },
+    ],
+  },
+  {
+    titulo: "D.Gray-man",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `La historia gira alrededor de Allen Walker, un exorcista, al final imaginario del siglo XIX en Europa. Allen es un miembro de la orden religiosa oscura, formado por exorcistas, conectados con el Vaticano. La misión de la Orden es detener al Conde del Milenio, espíritu necrófago maligno que se propone limpiar el mundo destruyendo a todos los seres humanos con sus armas llamadas "Akuma".`,
+    portada: "dgrayman portada.webp",
+    fondo: "dgrayman fondo.webp",
+    enSeccion: true,
+    temporada: "D gray man (2006)",
+    capitulos: [
+      { nombre: "Capítulo 48", drive: "https://drive.google.com/file/d/18K_mNCQc4kg_T4WczOcEUmqvKyyaceTM/view?usp=sharing"},
+      { nombre: "Capítulo 49", drive: "https://drive.google.com/file/d/124v8YPij9y3bNEjGWM6OUugE0sUul13B/view?usp=sharing"},
+      { nombre: "Capítulo 50", drive: "https://drive.google.com/file/d/13lqSvtwhiDBVkfWPUZRe7pFNpVfsjwrk/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Erased",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `Satoru Fujinuma, un joven que tiene la misteriosa habilidad de retroceder unos minutos en el tiempo para evitar tragedias. Sin embargo, un día es enviado 18 años al pasado, cuando aún era un niño. Allí deberá descubrir la verdad detrás de una serie de secuestros y asesinatos que marcaron su infancia, intentando cambiar el destino de las personas que más quiere.`,
+    portada: "erased portada.webp",
+    fondo: "erased fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Capítulo 1", drive: "https://drive.google.com/file/d/11Sh6uBOzVmjtNJTki1hMdhJkGcs_BvNw/view?usp=sharing"},
+      { nombre: "Capítulo 2", drive: "https://drive.google.com/file/d/1bbWGHWjdrh02MBrXAesUp6Trt8b1JBsq/view?usp=sharing"},
+      { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/16HuDOyKalFIpq2HMTkkdmfr225QJSDDx/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: Steel Ball Run",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `Johnny Joestar, un ex-jockey parapléjico, y Gyro Zeppeli, un maestro de un arte místico llamado "Spin", participan en una brutal carrera de caballos transcontinental de 6,000 kilómetros por un premio de 50 millones de dólares. La competencia es en realidad una fachada para recolectar los restos dispersos de un "Cadáver Sagrado" mientras evaden a asesinos.`,
+    portada: "jojos parte 7 portada.webp",
+    fondo: "jojos parte 7 fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Capítulo 2", drive: "https://drive.google.com/file/d/1tamYyTeOltz0W9ndlM9qgsy4dg0sHD6r/view?usp=sharing"},
+      { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/1UUPophbLXislK3hq7cmfbWSWSvqtN9Bm/view?usp=sharing"},
+      { nombre: "Capítulo 4", drive: "https://drive.google.com/file/d/1Cts7g4lhxlIVbm3BE5M4ZI8Qf2e5bZGA/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Kimetsu no Yaiba",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `Tanjirou Kamado vive con su familia y gana dinero vendiendo carbón. Todo cambia cuando su familia es asesinada por un demonio y su hermana Nezuko fue convertida en demonio. Tanjirou se convierte en un asesino de demonios y busca ayudar a su hermana a volverse humana nuevamente.`,
+    portada: "kimetsu no yaiba portada.webp",
+    fondo: "kimetsu no yaiba fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 4: Arco del Entrenamiento de los Pilares",
+    capitulos: [
+      { nombre: "Capítulo 2", drive: "https://drive.google.com/file/d/17n8KJQvAcM4Ku2evjQcaufUDSGGh7_ER/view?usp=sharing"},
+      { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/18U8wp2nC8oxiKplJSZHz6XQ8hjt6j7NA/view?usp=sharing"},
+      { nombre: "Capítulo 4", drive: "https://drive.google.com/file/d/1voNLF_Hm-RydJ6KE5S5w4Zcycf-LmSWk/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Lord of Mysteries",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `Zhou Mingrui despierta en un mundo alterno de estética victoriana, reencarnado como Klein Moretti. Rodeado de maquinaria y artefactos arcanos, descubre un universo donde la ciencia convive con la magia: pociones, hechizos y objetos sellados. Klein comienza a desarrollar extraños poderes gracias a las pociones de los Beyonders, iniciando un viaje lleno de secretos y transformaciones.`,
+    portada: "lord of mysteries portada.webp",
+    fondo: "lord of mysteries fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 1",
+    capitulos: [
+      { nombre: "Capítulo 10", drive: "https://drive.google.com/file/d/1ZF6PH5zBrXYxCIceoBchJs3bQkt4cfG8/view?usp=sharing"},
+      { nombre: "Capítulo 11", drive: "https://drive.google.com/file/d/1CtujJeH4bUs719VMohT0GjUJdRsRkCfO/view?usp=sharing"},
+      { nombre: "Capítulo 12", drive: "https://drive.google.com/file/d/1JXOl9OPdZykctQSiBGY0okhvuUq5GdJo/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Monster",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `El Dr. Kenzo Tenma, un brillante neurocirujano japonés en Alemania que salva la vida de un niño con un disparo en la cabeza en lugar de al alcalde, desencadenando una serie de asesinatos sociópatas por parte del paciente, Johan, a quien Tenma se siente obligado a detener.`,
+    portada: "monster portada.webp",
+    fondo: "monster fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Capítulo 18", drive: "https://drive.google.com/file/d/10jCHFpd5_4OeNr47rneyfXv33T7srib8/view?usp=sharing"},
+      { nombre: "Capítulo 19", drive: "https://drive.google.com/file/d/1UMzTiadoy5IVL1q2ALEYo3d6jpCxUztv/view?usp=sharing"},
+      { nombre: "Capítulo 20", drive: "https://drive.google.com/file/d/1QZNZ1CE6L-xhuvrhL1jAtdu0bBYrEpI_/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Space Dandy",
+    tipo: "anime",
+    nota: null,
+    sinopsis: `La serie está protagonizada por Dandy, un cazador de aliens y el tipo más "dandy" de todo el espacio. Se sitúa en un futuro en el que la humanidad ha llegado a los confines del universo, un mundo en el que Dandy busca aliens que nadie ha encontrado antes sirviéndose de su robot acompañante QT y un gato alienígena llamado Meow.`,
+    portada: "space dandy portada.webp",
+    fondo: "space dandy fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Capítulo 13", drive: "https://drive.google.com/file/d/13LEitNA-e8DlFn2UDTpIsIrYbbHAlWNs/view?usp=sharing"},
+      { nombre: "Capítulo 14", drive: "https://drive.google.com/file/d/1ONhEQ4s9qxbofsqtiWX6RRLxc-H0wMJ9/view?usp=sharing"},
+      { nombre: "Capítulo 15", drive: "https://drive.google.com/file/d/1Csa7q61y6hhrCyoaPV83NVBntfBYv1RO/view?usp=sharing"},
+    ],
+  },
+
+  // ---------- Cartoon ----------
+  {
+    titulo: "Pepper Ann",
+    tipo: "cartoon",
+    nota: null,
+    sinopsis: `Pepper Ann es una adolescente en la eterna búsqueda de ser interesante. Está siempre en la montaña rusa emocional de la adolescencia, lidiando con las crisis de su vida cotidiana de una manera tal que le da un giro maravilloso a cada triunfo y a cada escollo. Provista de ideas singulares y divertidas, enfrenta todos los obstáculos en su camino.`,
+    portada: "pepper ann portada.webp",
+    fondo: "pepper ann fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 1",
+    capitulos: [
+      { nombre: "Capítulo 09", drive: "https://drive.google.com/file/d/1GakhP7VBvRvEeUUYXcooUtA5UO1KYUYC/view?usp=sharing"},
+      { nombre: "Capítulo 10", drive: "https://drive.google.com/file/d/1Fs1H28bQHCWB-VdH8-QvKFPeZgGpmQtm/view?usp=sharing"},
+      { nombre: "Capítulo 11", drive: "https://drive.google.com/file/d/1_ale2z-M9e8rqkXG0s-qsbudTJTlLLfq/view?usp=sharing"},
+    ],
+  },
+
+  // ---------- Series ----------
+  {
+    titulo: "Daredevil",
+    tipo: "serie",
+    nota: null,
+    sinopsis: `La serie de Daredevil gira en torno a Matthew Murdock, un abogado de día y superhéroe de noche. A pesar de ser ciego, posee un oído, un olfato, una fuerza y una agilidad increíblemente desarrolladas. Sin descanso, Matthew Murdock recorrerá las calles de Nueva York a la caza de todo tipo de criminales a los que no puede castigar un tribunal.`,
+    portada: "daredevil portada.webp",
+    fondo: "daredevil fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 1",
+    capitulos: [
+      { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/1iN3zwZ51ctPFhxXInOgo32lcBlLsMiIQ/view?usp=sharing"},
+    ],
+  },
+  {
+    titulo: "Dr. House",
+    tipo: "serie",
+    nota: null,
+    sinopsis: `La serie de televisión "Dr. House" sigue al personaje principal, el Dr. Gregory House, un médico genio y misántropo con problemas de adicción a las drogas, mientras dirige un equipo de diagnóstico en el ficticio Hospital Universitario Princeton-Plainsboro en Nueva Jersey.`,
+    portada: "house portada.webp",
+    fondo: "house fondo.webp",
+    enSeccion: true,
+    temporada: "Temporada 6",
+    capitulos: [
+      { nombre: "Capítulo 12", drive: "https://drive.google.com/file/d/1Bf1JJ6ojjNECM_dFRbu4PIZ5Bw3KIM4_/view?usp=sharing"},
+      { nombre: "Capítulo 13", drive: "https://drive.google.com/file/d/1aYdrDVc_gd8hhVKL3aY0QOipY8BvMfZg/view?usp=sharing"},
+    ],
+  },
+
+// ==========================================================
+//  RANKING (terminados)
+// ==========================================================
+
+  {
+    titulo: "Hunter x Hunter",
+    tipo: "anime",
+    nota: 9.9,
+    sinopsis: `La serie sigue la historia de varios cazadores que se dedican principalmente a realizar tareas muy peligrosas, desde localizar objetos raros y monstruos a atravesar territorios inexplorados. La historia sigue a Gon Freecss, un niño de 12 años, que intenta encontrar a su padre y cazador Ging.`,
+    portada: "hxh portada.webp",
+    imagenNota: "hxh nota.webp",
+    fondo: "hxh fondo.webp",
+  },
+  {
+    titulo: "Fullmetal Alchemist: Brotherhood",
+    tipo: "anime",
+    nota: 9.2,
+    desempate: 1,
+    sinopsis: `Los hermanos Edward y Alphonse Elric en su búsqueda de la Piedra Filosofal para restaurar sus cuerpos después de un intento fallido de resucitar a su madre usando alquimia prohibida. Enfrentarán conspiraciones gubernamentales, experimentos secretos y seres conocidos como homúnculos.`,
+    portada: "fmab portada.webp",
+    imagenNota: "fmab nota.webp",
+    fondo: "fmab fondo.webp",
+  },
+  {
+    titulo: "Mob Psycho 100",
+    tipo: "anime",
+    nota: 9.2,
+    desempate: 2,
+    sinopsis: `Shigeo Kageyama "Mob", un estudiante de secundaria introvertido, que es un poderoso psíquico que intenta controlar sus habilidades y llevar una vida normal, llevándolo a trabajar con Reigen para exorcizar espíritus y lidiar con situaciones sobrenaturales.`,
+    portada: "mob psycho portada.webp",
+    imagenNota: "mob psycho nota.webp",
+    fondo: "mob psycho fondo.webp",
+  },
+  {
+    titulo: "Hellsing Ultimate",
+    tipo: "anime",
+    nota: 9.0,
+    desempate: 1,
+    sinopsis: `El vampiro Alucard, su maestro Sir Integra Fairbrook Wingates Hellsing y su recién engendrada pupila Seras Victoria intentan proteger a Inglaterra de un comandante de las Schutzstaffel.`,
+    portada: "hellsing u portada.webp",
+    imagenNota: "hellsing u nota.webp",
+    fondo: "hellsing u fondo.webp",
+  },
+  {
+    titulo: "Los Caballeros del Zodiaco: El Lienzo Perdido",
+    tipo: "anime",
+    nota: 9.0,
+    desempate: 2,
+    sinopsis: `Tenma y Alone, dos huérfanos que viven en un pueblo italiano, ven sus vidas cambiar cuando Pandora revela que Alone es la reencarnación de Hades, mientras que Tenma es llevado por Dohko de Libra al Santuario para convertirse en Caballero de Athena.`,
+    portada: "lienzo perdido portada.webp",
+    imagenNota: "lienzo perdido nota.webp",
+    fondo: "lienzo perdido fondo.webp",
+  },
+  {
+    titulo: "Bleach",
+    tipo: "anime",
+    nota: 8.4,
+    sinopsis: `Ichigo Kurosaki es un estudiante de preparatoria que tiene la habilidad de interactuar con espíritus. Se ve obligado a convertirse en un shinigami sustituto involuntariamente, ya que absorbe la mayor parte de los poderes de otra shinigami llamada Rukia.`,
+    portada: "bleach portada.webp",
+    imagenNota: "bleach nota.webp",
+    fondo: "bleach fondo.webp",
+  },
+  {
+    titulo: "El increíble mundo de Gumball",
+    tipo: "cartoon",
+    nota: 8.3,
+    sinopsis: `La serie gira en torno a la vida de un gato azul antropomórfico llamado Gumball Watterson y sus frecuentes travesuras en la ficticia ciudad estadounidense de Elmore, acompañado por su hermano adoptivo y su mejor amigo, Darwin.`,
+    portada: "gumball portada.webp",
+    imagenNota: "gumball nota.webp",
+    fondo: "gumball fondo.webp",
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: Stardust Crusaders",
+    tipo: "anime",
+    nota: 7.9,
+    sinopsis: `Stardust Crusaders sigue a Jotaro Kujo y sus aliados en un viaje desde Japón hasta Egipto para derrotar al malvado DIO. Usan poderes llamados Stands para enfrentar enemigos en combates sobrenaturales. Su misión es salvar a la madre de Jotaro y poner fin a la amenaza de DIO.`,
+    portada: "jojos parte 3 portada.webp",
+    imagenNota: "jojos parte 3 nota.webp",
+    fondo: "jojos parte 3 fondo.webp",
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    tipo: "anime",
+    nota: 7.8,
+    desempate: 1,
+    sinopsis: `Diez años después de los eventos de Stardust Crusaders, Jotaro Kujo llega a la ciudad de Morioh en 1999. Fue enviado por su abuelo para encontrar a un pariente lejano y, al mismo tiempo, protegerlo de una amenaza latente que se esconde en el pueblo.`,
+    portada: "jojos parte 4 portada.webp",
+    imagenNota: "jojos parte 4 nota.webp",
+    fondo: "jojos parte 4 fondo.webp",
+  },
+  {
+    titulo: "Invencible",
+    tipo: "serie",
+    nota: 7.8,
+    desempate: 2,
+    sinopsis: `Mark Grayson es un adolescente normal, excepto por el hecho de que su padre Nolan es Omni-man. Poco después, Mark comienza a desarrollar sus propios poderes y entra en la tutela de su padre. A medida que Mark utiliza sus poderes, descubre que el legado de su padre no es tan heroico como parece.`,
+    portada: "invencible portada.webp",
+    imagenNota: "invencible nota.webp",
+    fondo: "invencible fondo.webp",
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: Golden Wind",
+    tipo: "anime",
+    nota: 7.8,
+    desempate: 3,
+    sinopsis: `Giorno Giovanna sueña con convertirse en el líder de la mafia Passione para acabar con el crimen y proteger a los inocentes. Para lograrlo, se une al grupo de Bruno Bucciarati y juntos deben enfrentarse al peligroso jefe de la organización y sus secuaces, descubriendo que su misión los llevará a proteger a la hija del jefe, Trish Una.`,
+    portada: "jojos parte 5 portada.webp",
+    imagenNota: "jojos parte 5 nota.webp",
+    fondo: "jojos parte 5 fondo.webp",
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: Stone Ocean",
+    tipo: "anime",
+    nota: 7.7,
+    sinopsis: `Jolyne Cujoh, hija de Jotaro Kujo, quien es encarcelada injustamente en Florida en 2011 por un crimen que no cometió, y descubre un misterioso colgante que despierta su propio Stand, Stone Free, mientras se ve envuelta en una conspiración ideada por el discípulo de DIO, Enrico Pucci, para cumplir los deseos del villano y alcanzar el "Cielo".`,
+    portada: "jojos parte 6 portada.webp",
+    imagenNota: "jojos parte 6 nota.webp",
+    fondo: "jojos parte 6 fondo.webp",
+  },
+  {
+    titulo: "Castlevania",
+    tipo: "serie",
+    nota: 7.6,
+    desempate: 1,
+    sinopsis: `Castlevania se basa en la historia del videojuego Castlevania III: Dracula's Curse. Presenta a Trevor Belmont como el protagonista principal, en una búsqueda para detener al maligno Conde Drácula que busca destruir a la humanidad luego de la ejecución de su esposa Lisa.`,
+    portada: "castlevania portada.webp",
+    imagenNota: "castlevania nota.webp",
+    fondo: "castlevania fondo.webp",
+  },
+  {
+    titulo: "Haikyu!!",
+    tipo: "anime",
+    nota: 7.6,
+    desempate: 2,
+    sinopsis: `Shoyo Hinata y Tobio Kageyama superan su rivalidad para formar una dupla imparable en el equipo de voleibol de la preparatoria Karasuno. Juntos lideran a sus compañeros en un emocionante viaje de esfuerzo y amistad para devolverle la gloria al equipo y alcanzar el torneo nacional.`,
+    portada: "haikyu!! portada.webp",
+    imagenNota: "haikyu!! nota.webp",
+    fondo: "haikyu!! fondo.webp",
+  },
+  {
+    titulo: "Link Click",
+    tipo: "anime",
+    nota: 7.5,
+    sinopsis: `Cheng Xiaoshi y Lu Guang, dos amigos que regentan un estudio de fotografía llamado "Time Photo Studio". Usan sus superpoderes para entrar en las fotos de sus clientes y cumplir sus deseos, pero pronto se ven envueltos en peligrosos misterios al intentar cambiar el pasado.`,
+    portada: "link click portada.webp",
+    imagenNota: "link click nota.webp",
+    fondo: "link click fondo.webp",
+  },
+  {
+    titulo: "To Be Hero X",
+    tipo: "anime",
+    nota: 7.4,
+    sinopsis: `En un mundo donde los héroes existen gracias a la fe del público, surgen múltiples historias conectadas. Cada arco sigue a distintos personajes enfrentando sus propios conflictos, identidades y responsabilidades dentro de este sistema, mostrando que ser un héroe va más allá de la fama y la apariencia.`,
+    portada: "to be hero x portada.webp",
+    imagenNota: "to be hero x nota.webp",
+    fondo: "to be hero x fondo.webp",
+  },
+  {
+    titulo: "One Punch Man",
+    tipo: "anime",
+    nota: 7.3,
+    desempate: 1,
+    sinopsis: `Saitama es un poderoso superhéroe capaz de derrotar a cualquier monstruo de un solo golpe. Sin embargo, al unirse a la Asociación de Héroes junto al cíborg Genos para proteger la ciudad, debe comenzar desde cero y ganarse poco a poco el reconocimiento, ya que nunca ha derrotado oficialmente a un monstruo.`,
+    portada: "opm portada.webp",
+    imagenNota: "opm nota.webp",
+    fondo: "opm fondo.webp",
+  },
+  {
+    titulo: "Drácula (2020)",
+    tipo: "serie",
+    nota: 7.3,
+    desempate: 2,
+    sinopsis: `El Conde Drácula busca trasladarse de Transilvania a la Inglaterra victoriana, donde se convierte en el epicentro de un juego intelectual y mortal contra la hermana Agatha Van Helsing. A medida que el Conde se infiltra en la sociedad humana se ve obligado a enfrentarse a su pasado, donde el vampiro debe lidiar con un mundo moderno que amenaza su propia naturaleza y existencia.`,
+    portada: "dracula 2020 portada.webp",
+    imagenNota: "dracula 2020 nota.webp",
+    fondo: "dracula 2020 fondo.webp",
+  },
+  {
+    titulo: "JoJo's Bizarre Adventure: The Animation",
+    tipo: "anime",
+    nota: 7.2,
+    desempate: 1,
+    sinopsis: `Jonathan Joestar es traicionado por Dio Brando, quien busca quedarse con la fortuna Joestar. Al descubrir el poder de la "máscara del demonio", Dio desata una lucha sobrenatural contra Jonathan. La historia sigue con sus descendientes enfrentando nuevos desafíos.`,
+    portada: "jojos the animation portada.webp",
+    imagenNota: "jojos the animation nota.webp",
+    fondo: "jojos the animation fondo.webp",
+  },
+  {
+    titulo: "DanDaDan",
+    tipo: "anime",
+    nota: 7.2,
+    desempate: 2,
+    sinopsis: `La trama sigue a dos estudiantes de secundaria que se ven envueltos en situaciones alocadas que mezclan lo sobrenatural y lo alienígena. Lo que hace única a esta serie es su enfoque en la comedia de situaciones extrañas, personajes entrañables y sus elementos de acción rápida.`,
+    portada: "dandadan portada.webp",
+    imagenNota: "dandadan nota.webp",
+    fondo: "dandadan fondo.webp",
+  },
+  {
+    titulo: "Magi: The Kingdom of Magic",
+    tipo: "anime",
+    nota: 6.9,
+    sinopsis: `Magi: The Kingdom of Magic es la segunda temporada del anime, donde Aladdin, Alibaba y Morgiana se separan para fortalecerse tras los eventos de Sindria. Aladdin viaja a la academia de magia en Magnostadt, mientras Alibaba y Morgiana buscan sus propios caminos para enfrentar a la organización Al-Thamen y proteger al mundo.`,
+    portada: "magi portada.webp",
+    imagenNota: "magi nota.webp",
+    fondo: "magi fondo.webp",
+  },
+  {
+    titulo: "Gachiakuta",
+    tipo: "anime",
+    nota: 6.8,
+    desempate: 1,
+    sinopsis: `Rudo vive en uno de los barrios marginales de una ciudad flotante, donde los pobres sobreviven bajo la opulencia de los ricos. Tras ser acusado erróneamente de asesinato, lo lanzan al Abismo, un lugar donde los desechos de la humanidad han creado monstruos feroces. Para sobrevivir y buscar venganza, Rudo debe dominar un nuevo poder y unirse a los Limpiadores.`,
+    portada: "gachiakuta portada.webp",
+    imagenNota: "gachiakuta nota.webp",
+    fondo: "gachiakuta fondo.webp",
+  },
+  {
+    titulo: "The Spectacular Spider-Man",
+    tipo: "cartoon",
+    nota: 6.8,
+    desempate: 2,
+    sinopsis: `Peter Parker es un adolescente de dieciséis años que sufre la picadura de una araña que le modifica genéticamente, convirtiéndole en un superhéroe. Deberá encontrar un equilibrio entre sus alter-ego y la vida entre la escuela y los combates contra villanos. Cada temporada representará a un semestre de instituto de Peter.`,
+    portada: "spectacular spiderman portada.webp",
+    imagenNota: "spectacular spiderman nota.webp",
+    fondo: "spectacular spiderman fondo.webp",
+  },
+  {
+    titulo: "Inuyasha",
+    tipo: "anime",
+    nota: 6.7,
+    sinopsis: `Aome, una estudiante de 15 años, es transportada al Japón feudal por un demonio que la succiona en un pozo. Allí conoce a Inuyasha, un medio-demonio perro con el que se une para recuperar los fragmentos de la joya Shikon, que ha sido rota en mil pedazos.`,
+    portada: "inuyasha portada.webp",
+    imagenNota: "inuyasha nota.webp",
+    fondo: "inuyasha fondo.webp",
+  },
+  {
+    titulo: "Hikaru ga shinda natsu",
+    tipo: "anime",
+    nota: 6.6,
+    sinopsis: `Dos mejores amigos viven en un pueblo rural japonés, Yoshiki y Hikaru. Crecieron juntos y eran inseparables, hasta el día en que Hikaru volvió de las montañas y ya no era él mismo. "Algo" se ha apoderado del cuerpo de Hikaru, de sus recuerdos, de sus sentimientos y todo lo que conocen empieza a desenredarse.`,
+    portada: "hikaru portada.webp",
+    imagenNota: "hikaru nota.webp",
+    fondo: "hikaru fondo.webp",
+  },
+  {
+    titulo: "Castlevania: Nocturne",
+    tipo: "serie",
+    nota: 6.5,
+    sinopsis: `Castlevania: Nocturne es una serie de Netflix que se desarrolla en 1792 durante la Revolución Francesa. La historia se centra en Richter Belmont, un cazador de vampiros que debe detener a una vampira ambiciosa y a un Mesías Vampiro.`,
+    portada: "castlevania nocturne portada.webp",
+    imagenNota: "castlevania nocturne nota.webp",
+    fondo: "castlevania nocturne fondo.webp",
+  },
+  {
+    titulo: "Kamen Rider Den-O",
+    tipo: "serie",
+    nota: 6.0,
+    sinopsis: `Ryotaro Nogami, tras encontrar un extraño ticket, se convierte en Kamen Rider Den-O para luchar contra los Imagin, seres que buscan alterar el pasado. Viajando en el Den-Liner junto a aliados como Momotaros y Kamen Rider Zeronos, protege la línea temporal mientras descubre secretos sobre su hermana y el futuro.`,
+    portada: "kr den o portada.webp",
+    imagenNota: "kr den o nota.webp",
+    fondo: "kr den o fondo.webp",
+  },
+
+];
+
+// ---------- PRÓXIMAMENTE ----------
+//   titulo → nombre que se muestra
+//   imagen → "archivo.webp"
+//   fecha  → por ejemplo "Enero 2020"
+const PROXIMAMENTE = [
+  { titulo: "Baccano", imagen: "baccano.webp", fecha: "Julio 2007" },
+  { titulo: "Chainsaw Man", imagen: "chainsawman.webp", fecha: "Octubre 2022" },
+  { titulo: "Devilman Crybaby", imagen: "devilman crybaby.webp", fecha: "Enero 2018" },
+  { titulo: "Gegege no Kitaro", imagen: "gegege no kitaro.webp", fecha: "Abril 2018" },
+  { titulo: "Jujutsu Kaisen", imagen: "jujutsu kaisen.webp", fecha: "Octubre 2020" },
+  { titulo: "Iruma-kun", imagen: "iruma kun.webp", fecha: "Octubre 2019" },
+  { titulo: "Ranking of Kings", imagen: "ousama ranking.webp", fecha: "Octubre 2021" },
+  { titulo: "Kengan Ashura", imagen: "kengan ashura.webp", fecha: "Julio 2019" },
+  { titulo: "Moon Knight", imagen: "moon knight.webp", fecha: "Marzo 2022" },
+  { titulo: "Solo Leveling", imagen: "solo leveling.webp", fecha: "Enero 2024" },
+  { titulo: "Sangatsu no Lion", imagen: "sangatsu no lion.webp", fecha: "Octubre 2016" },
+  { titulo: "Tengoku Daimakyo", imagen: "tengoku daimakyo.webp", fecha: "Abril 2023" },
+  { titulo: "Vinland Saga", imagen: "vinland saga.webp", fecha: "Julio 2019" },
+];
