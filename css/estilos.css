@@ -16,9 +16,9 @@
   --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
   --degradado: linear-gradient(135deg, var(--acento), var(--acento-2));
   --oscuridad: 0.72;
-  --hero-img: url("../img/hero/fondo 3.webp");
+  --hero-img: url("../img/hero/fondo.webp");
   --hero-velo: 0.25;
-  --ruleta-img: url("../img/ruleta/fondo 2.webp");
+  --ruleta-img: url("../img/ruleta/fondo.webp");
   --ruleta-velo: 0.25;
   --prox-img: none;
   --prox-velo: 0.5;
