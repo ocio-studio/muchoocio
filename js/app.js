@@ -710,6 +710,7 @@ function abrirFicha(i) {
   ].filter(Boolean).join("; ");
   const hayCalif = Boolean(imgNota) || tieneNota(t);
   capsActuales = t.enSeccion && Array.isArray(t.capitulos) ? t.capitulos : [];
+  const esPelicula = t.tipo === "pelicula" && capsActuales.length === 1;
 
   $("#modal-contenido").innerHTML = `
     <div class="ficha">
@@ -732,6 +733,13 @@ function abrirFicha(i) {
             <span class="ficha__tipo">${esc(nombreSeccion(t.tipo))}</span>
             <h3>Sinopsis</h3>
             <p class="ficha__sinopsis">${esc(t.sinopsis || "Sin sinopsis todavía.")}</p>
+            ${
+              esPelicula
+                ? `<button class="ficha__ver" type="button" data-ver-pelicula>
+                     <i class="fa-solid fa-play" aria-hidden="true"></i> Ver película
+                   </button>`
+                : ""
+            }
           </div>
 
           ${
@@ -747,16 +755,20 @@ function abrirFicha(i) {
 
         ${
           capsActuales.length
-            ? `<div class="ficha__caps">
-                 <h3>Capítulos</h3>
-                 ${t.temporada ? `<p class="ficha__temporada">${esc(t.temporada)}</p>` : ""}
-                 <div id="reproductor" class="reproductor"></div>
-                 <div class="lista-caps">
-                   ${capsActuales
-                     .map((c, k) => `<button class="cap" type="button" data-cap="${k}">${esc(c.nombre)}</button>`)
-                     .join("")}
-                 </div>
-               </div>`
+            ? esPelicula
+              ? `<div class="ficha__caps ficha__caps--pelicula">
+                   <div id="reproductor" class="reproductor"></div>
+                 </div>`
+              : `<div class="ficha__caps">
+                   <h3>Capítulos</h3>
+                   ${t.temporada ? `<p class="ficha__temporada">${esc(t.temporada)}</p>` : ""}
+                   <div id="reproductor" class="reproductor"></div>
+                   <div class="lista-caps">
+                     ${capsActuales
+                       .map((c, k) => `<button class="cap" type="button" data-cap="${k}">${esc(c.nombre)}</button>`)
+                       .join("")}
+                   </div>
+                 </div>`
             : ""
         }
       </div>
@@ -812,6 +824,8 @@ document.addEventListener("click", (e) => {
 
   if (e.target.closest("[data-volver]")) return volverAFicha();
 
+  if (e.target.closest("[data-ver-pelicula]")) return reproducir(0);
+  
   const cap = e.target.closest(".cap");
   if (cap) return reproducir(Number(cap.dataset.cap), cap);
 
