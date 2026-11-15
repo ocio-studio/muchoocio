@@ -192,6 +192,20 @@ const TITULOS = [
     ],
   },
 
+  // ---------- Peliculas ----------
+  {
+    titulo: "Akira (1988)",
+    tipo: "pelicula",
+    nota: null,
+    sinopsis: `En Neo-Tokyo, Kaneda busca rescatar a su amigo Tetsuo, quien ha sido capturado por el ejército tras un misterioso accidente. Sin embargo, Tetsuo desarrolla poderes psíquicos extraordinarios que poco a poco escapan de su control. Mientras militares y otros individuos intentan detenerlo, una antigua fuerza conocida como Akira amenaza con despertar. El destino de la ciudad queda en peligro ante un poder capaz de provocar una destrucción inimaginable.`,
+    portada: "akira portada.webp",
+    fondo: "akira fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Ver película", drive: "https://drive.google.com/file/d/1y5V0-ZxaES_eX21y9zfdQLL0u8VrfmBS/view?usp=sharing"},
+    ],
+  },
+
 // ==========================================================
 //  RANKING (terminados)
 // ==========================================================
