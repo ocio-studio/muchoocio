@@ -39,9 +39,9 @@ const TITULOS = [
     enSeccion: true,
     temporada: "Temporada 4",
     capitulos: [
-        { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/1Bh3LvPGhbOQI3kea38HOmZXLLjwn9m_z/view?usp=sharing" },
-        { nombre: "Capítulo 4", drive: "https://drive.google.com/file/d/1jEJuU68RlA2Rip9X9r7F0yh1TkDrsB7n/view?usp=sharing" },
         { nombre: "Capítulo 5", drive: "https://drive.google.com/file/d/1d31M-kDhU3BPg8LGhgsNxEKFGWINc0Sl/view?usp=sharing" },
+        { nombre: "Capítulo 6", drive: "https://drive.google.com/file/d/1MuSxB8imraJZ9B6W8Lxj5fo2fYPZZRSz/view?usp=sharing" },
+        { nombre: "Capítulo 7", drive: "https://drive.google.com/file/d/1tdqANsDPUPllmOb0RBYMkz7nHkxWoi_d/view?usp=sharing" },
     ],
   },
   {
@@ -68,9 +68,9 @@ const TITULOS = [
     fondo: "erased fondo.webp",
     enSeccion: true,
     capitulos: [
-      { nombre: "Capítulo 1", drive: "https://drive.google.com/file/d/11Sh6uBOzVmjtNJTki1hMdhJkGcs_BvNw/view?usp=sharing"},
       { nombre: "Capítulo 2", drive: "https://drive.google.com/file/d/1bbWGHWjdrh02MBrXAesUp6Trt8b1JBsq/view?usp=sharing"},
       { nombre: "Capítulo 3", drive: "https://drive.google.com/file/d/16HuDOyKalFIpq2HMTkkdmfr225QJSDDx/view?usp=sharing"},
+      { nombre: "Capítulo 4", drive: "https://drive.google.com/file/d/1Vus-LwxK5iT_rklwTjhQCX4UEv3Ht3X1/view?usp=sharing"},
     ],
   },
   {
