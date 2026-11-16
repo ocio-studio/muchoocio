@@ -214,7 +214,13 @@ function vistaRuleta() {
           <div class="ruleta__propia">
             <input id="ruleta-input" type="text" placeholder="Escribe opciones separadas por comas">
             <button id="ruleta-agregar" class="ruleta__btn ruleta__btn--suave" type="button">Agregar</button>
-            <button id="ruleta-limpiar" class="ruleta__btn ruleta__btn--suave" type="button">Limpiar</button>
+            <details class="ruleta__elegir ruleta__quitar">
+              <summary id="ruleta-propias-resumen">Opciones (0)</summary>
+              <div class="ruleta__lista">
+                <div id="ruleta-propias-lista"></div>
+                <button id="ruleta-limpiar" class="ruleta__btn ruleta__btn--suave ruleta__btn--chico" type="button">Quitar todas</button>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -247,6 +253,23 @@ function pintarLista() {
       </label>`;
     })
     .join("");
+}
+
+function pintarPropias() {
+  const lista = $("#ruleta-propias-lista");
+  if (!lista) return;
+  lista.innerHTML = ruleta.propias.length
+    ? ruleta.propias
+        .map(
+          (texto, i) => `
+        <div class="ruleta__item">
+          <span>${esc(texto)}</span>
+          <button class="ruleta__x" type="button" data-quitar="${i}" aria-label="Quitar ${esc(texto)}">×</button>
+        </div>`
+        )
+        .join("")
+    : `<p class="ruleta__vacio">Aún no agregaste opciones.</p>`;
+  $("#ruleta-propias-resumen").textContent = `Opciones (${ruleta.propias.length})`;
 }
 
 function dibujarRuleta() {
@@ -310,7 +333,7 @@ function actualizarControles() {
   $("#ruleta-agregar").disabled = ocupado;
   $("#ruleta-limpiar").disabled = ocupado;
   $("#ruleta-input").disabled = ocupado;
-  document.querySelectorAll(".ruleta__chip, #ruleta-lista input").forEach((b) => (b.disabled = ocupado));
+  document.querySelectorAll(".ruleta__chip, #ruleta-lista input, .ruleta__x").forEach((b) => (b.disabled = ocupado));
 
   $("#ruleta-elegir-resumen").textContent = `Elegir títulos (${elegidos} de ${total})`;
 }
@@ -348,6 +371,7 @@ function refrescarRuleta() {
   if (!$("#ruleta")) return;
   armarOpciones();
   pintarChips();
+  pintarPropias();
   dibujarRuleta();
   actualizarControles();
   $("#ruleta-resultado").innerHTML = "";
@@ -425,6 +449,9 @@ function iniciarRuleta() {
     else if (boton.id === "ruleta-agregar") agregarPropias();
     else if (boton.id === "ruleta-limpiar") {
       ruleta.propias = [];
+      refrescarRuleta();
+    } else if (boton.dataset.quitar !== undefined && !ruleta.girando) {
+      ruleta.propias.splice(Number(boton.dataset.quitar), 1);
       refrescarRuleta();
     }
   });
@@ -942,8 +969,9 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("click", (e) => {
   const abierto = document.querySelector(".ruleta__elegir[open]");
-  if (abierto && !abierto.contains(e.target)) abierto.removeAttribute("open");
+  if (abierto && !e.composedPath().includes(abierto)) abierto.removeAttribute("open");
 });
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") document.querySelector(".ruleta__elegir[open]")?.removeAttribute("open");
 });
