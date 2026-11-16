@@ -757,9 +757,42 @@ a { color: inherit; text-decoration: none; }
 .ruleta__modo { display: grid; margin-bottom: 1rem; }
 .ruleta__modo > * { grid-area: 1 / 1; align-self: start; }
 
-.ruleta__propia { display: flex; flex-wrap: wrap; gap: 0.5rem; visibility: hidden; }
+.ruleta__propia { display: flex; flex-wrap: wrap; gap: 0.5rem; visibility: hidden; position: relative; }
 .ruleta--propia .ruleta__propia { visibility: visible; }
-.ruleta--propia .ruleta__elegir { visibility: hidden; }
+.ruleta--propia .ruleta__modo > .ruleta__elegir { visibility: hidden; }
+
+/* Desplegable de las opciones escritas */
+.ruleta__quitar { position: static; }
+.ruleta__quitar summary { white-space: nowrap; }
+.ruleta__quitar .ruleta__btn--chico { justify-self: start; margin-top: 0.4rem; }
+
+.ruleta__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.3rem 0;
+  font-size: 0.92rem;
+}
+.ruleta__item span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.ruleta__x {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--suave);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ruleta__x:hover:not(:disabled) { background: var(--acento-2); color: #fff; }
+.ruleta__x:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.ruleta__vacio { padding: 0.3rem 0; font-size: 0.92rem; color: var(--suave); }
 
 .ruleta__propia input {
   flex: 1 1 200px;
