@@ -126,9 +126,9 @@ const TITULOS = [
     fondo: "monster fondo.webp",
     enSeccion: true,
     capitulos: [
-      { nombre: "Capítulo 18", drive: "https://drive.google.com/file/d/10jCHFpd5_4OeNr47rneyfXv33T7srib8/view?usp=sharing"},
-      { nombre: "Capítulo 19", drive: "https://drive.google.com/file/d/1UMzTiadoy5IVL1q2ALEYo3d6jpCxUztv/view?usp=sharing"},
       { nombre: "Capítulo 20", drive: "https://drive.google.com/file/d/1QZNZ1CE6L-xhuvrhL1jAtdu0bBYrEpI_/view?usp=sharing"},
+      { nombre: "Capítulo 21", drive: "https://drive.google.com/file/d/1m7xzFGIcIzPIHuhLvMMFsEBSfssERs7k/view?usp=sharing"},
+      { nombre: "Capítulo 22", drive: "https://drive.google.com/file/d/1BTiEB0wuzINcTdjkIW5oIiLoJehIqhPt/view?usp=sharing"},
     ],
   },
   {
