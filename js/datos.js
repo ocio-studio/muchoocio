@@ -194,15 +194,15 @@ const TITULOS = [
 
   // ---------- Peliculas ----------
   {
-    titulo: "Akira (1988)",
+    titulo: "WALL-E (2008)",
     tipo: "pelicula",
     nota: null,
-    sinopsis: `En Neo-Tokyo, Kaneda busca rescatar a su amigo Tetsuo, quien ha sido capturado por el ejército tras un misterioso accidente. Sin embargo, Tetsuo desarrolla poderes psíquicos extraordinarios que poco a poco escapan de su control. Mientras militares y otros individuos intentan detenerlo, una antigua fuerza conocida como Akira amenaza con despertar. El destino de la ciudad queda en peligro ante un poder capaz de provocar una destrucción inimaginable.`,
-    portada: "akira portada.webp",
-    fondo: "akira fondo.webp",
+    sinopsis: `En un futuro donde la Tierra se ha convertido en un planeta cubierto de basura, WALL-E, un pequeño robot encargado de limpiar los desechos, pasa sus días recolectando objetos curiosos. Su rutina cambia con la llegada de EVE, una sonda espacial de la que se enamora y a quien le muestra una pequeña planta encontrada entre los escombros. Juntos emprenden una aventura que los llevará hasta una nave espacial donde vive la humanidad, cuyo futuro depende del descubrimiento de WALL-E.`,
+    portada: "wall-e portada.webp",
+    fondo: "wall-e fondo.webp",
     enSeccion: true,
     capitulos: [
-      { nombre: "Ver película", drive: "https://drive.google.com/file/d/1y5V0-ZxaES_eX21y9zfdQLL0u8VrfmBS/view?usp=sharing"},
+      { nombre: "Película", drive: "https://drive.google.com/file/d/1y5V0-ZxaES_eX21y9zfdQLL0u8VrfmBS/view?usp=sharing"},
     ],
   },
 
