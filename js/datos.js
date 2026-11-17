@@ -202,7 +202,7 @@ const TITULOS = [
     fondo: "wall-e fondo.webp",
     enSeccion: true,
     capitulos: [
-      { nombre: "Película", drive: "https://drive.google.com/file/d/1y5V0-ZxaES_eX21y9zfdQLL0u8VrfmBS/view?usp=sharing"},
+      { nombre: "Película", drive: "https://drive.google.com/file/d/1UBPCuw-oglv1eD7nzsDwAZz6LTQNkEoh/view?usp=sharing"},
     ],
   },
 
