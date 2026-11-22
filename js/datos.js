@@ -194,15 +194,15 @@ const TITULOS = [
 
   // ---------- Peliculas ----------
   {
-    titulo: "WALL-E (2008)",
+    titulo: "Animatrix (2003)",
     tipo: "pelicula",
     nota: null,
-    sinopsis: `En un futuro donde la Tierra se ha convertido en un planeta cubierto de basura, WALL-E, un pequeño robot encargado de limpiar los desechos, pasa sus días recolectando objetos curiosos. Su rutina cambia con la llegada de EVE, una sonda espacial de la que se enamora y a quien le muestra una pequeña planta encontrada entre los escombros. Juntos emprenden una aventura que los llevará hasta una nave espacial donde vive la humanidad, cuyo futuro depende del descubrimiento de WALL-E.`,
-    portada: "wall-e portada.webp",
-    fondo: "wall-e fondo.webp",
+    sinopsis: `Animatrix reúne nueve historias animadas que exploran el universo de Matrix y el conflicto entre la humanidad y las máquinas. A través de diferentes personajes y acontecimientos, muestra cómo surgió la guerra que llevó a los humanos a vivir bajo el dominio de la inteligencia artificial. Cada relato aborda temas como la libertad, la conciencia, la rebelión y la búsqueda de la verdad. En conjunto, estas historias revelan distintos aspectos de un mundo donde la resistencia humana lucha por recuperar su libertad.`,
+    portada: "animatrix portada.webp",
+    fondo: "animatrix fondo.webp",
     enSeccion: true,
     capitulos: [
-      { nombre: "Ver película", drive: "https://drive.google.com/file/d/1UBPCuw-oglv1eD7nzsDwAZz6LTQNkEoh/view?usp=sharing"},
+      { nombre: "Ver película", drive: "https://drive.google.com/file/d/1zp9xlq0cfWVm-Q3Q1nGjqrctJFS9xJaj/view?usp=sharing"},
     ],
   },
 
