@@ -206,6 +206,19 @@ const TITULOS = [
     ],
   },
 
+  {
+    titulo: "Confessions (2010)",
+    tipo: "pelicula",
+    nota: null,
+    sinopsis: `Yuko Moriguchi, una profesora de secundaria, anuncia su renuncia y revela a sus alumnos que la muerte de su pequeña hija no fue un accidente, sino un asesinato cometido por dos estudiantes de su propia clase. Al descubrir que la justicia no podrá castigar a los responsables debido a su edad, decide poner en marcha un elaborado plan de venganza. A medida que salen a la luz las confesiones y secretos de los involucrados, la búsqueda de justicia se transforma en un oscuro juego psicológico.`,
+    portada: "confessions portada.webp",
+    fondo: "confessions fondo.webp",
+    enSeccion: true,
+    capitulos: [
+      { nombre: "Ver película", drive: "https://drive.google.com/file/d/1KXsXkzp4qR0PAXA0z4e-LpNPMmgPehLj/view?usp=sharing"},
+    ],
+  },
+
 // ==========================================================
 //  RANKING (terminados)
 // ==========================================================
